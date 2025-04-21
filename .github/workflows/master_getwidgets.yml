@@ -9,6 +9,12 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type YES to confirm deployment'
+        required: true
+        default: 'NO'
+
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
