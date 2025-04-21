@@ -80,6 +80,5 @@ jobs:
             --name getwidgets \
             --resource-group LightRoom \
             --src release.zip \
-            --os-type Linux
 
           
