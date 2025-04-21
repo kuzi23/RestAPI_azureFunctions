@@ -73,11 +73,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2D95F8A678B14D63A0A8702AD120EF4C }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0858715FE6464B8A8B6DC2417386603B }}
 
-      - name: 'Deploy to Azure Functions'
-        uses: Azure/functions-action@v1
-        id: deploy-to-function
-        with:
-          app-name: 'getwidgets'
-          slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+      - name: Deploy to Azure Functions using CLI
+        run: |
+          echo "Deploying to Function App: getwidgets"
+          az functionapp deployment source config-zip \
+            --name getwidgets \
+            --resource-group <your-resource-group-name> \
+            --src release.zip \
+            --os-type Linux
+
           
