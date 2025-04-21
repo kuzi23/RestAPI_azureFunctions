@@ -78,7 +78,7 @@ jobs:
           echo "Deploying to Function App: getwidgets"
           az functionapp deployment source config-zip \
             --name getwidgets \
-            --resource-group <your-resource-group-name> \
+            --resource-group LightRoom \
             --src release.zip \
             --os-type Linux
 
