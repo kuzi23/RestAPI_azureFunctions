@@ -70,6 +70,6 @@ jobs:
           app-name: 'getwidgets'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6A61BA24409A409ABE9881DE8C84DAE7 }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           sku: 'flexconsumption'
         
